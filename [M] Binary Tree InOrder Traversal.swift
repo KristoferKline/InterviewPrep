@@ -17,6 +17,16 @@
 //      - Iff we call from the node object instead, it will automatically handle that for us because a nil object won't call a function if it doesn't exist.
 //  - We can also use an inout reference rather than constantly returning an array to reduce our space complexity.
 //
+//  Optimizations:
+//  - I don't know of any other ways besides using the inout reference and optional chaining to optimize the performance / space complexity.
+//  - We know that it would take us O(n) because we need to visit every node.
+//  - Base case of nil root node is also covered well because result is passed immediately after the method is called.
+//  In long-term where we expect other cases to have an actual root node, adding a guard would be less performant.
+//
+//  Test Coverage:
+//  - Base case: 1 (root) returns [1]
+//  - Edge case: [nil, nil, nil] would still correctly return []
+//
 //  Created by Kristofer Kline on 6/25/18.
 //
 
